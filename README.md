@@ -25,6 +25,8 @@ GitHub Action to add new tags to existing Docker Image. No pull/push here becaus
             repository: test/image
             tag: dev
             new-tags: staging, production
+            wait-for-tag-seconds: 30 # optional, only if you want to retry finding existing tag
+            wait-for-tag-retry-interval: 5 # optional, only needed if you specify "wait-for-tag-seconds" above
           env:
             AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
             AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -48,6 +50,8 @@ GitHub Action to add new tags to existing Docker Image. No pull/push here becaus
           repository: test/image
           tag: dev
           new-tags: staging, production
+          wait-for-tag-seconds: 30 # optional, only if you want to retry finding existing tag
+          wait-for-tag-retry-interval: 5 # optional, only needed if you specify "wait-for-tag-seconds" above
 ```
 
 ## License Summary

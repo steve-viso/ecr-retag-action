@@ -22,6 +22,14 @@ inputs:
   new-tags:
     description: 'List of tags you want to add (e.g. v1.2.3, production, sha-1234asdf)'
     required: true
+  wait-for-tag-seconds:
+    description: 'Maximum number of seconds to wait for existing tag to be available before giving up'
+    required: false
+    default: '0'
+  wait-for-tag-retry-interval:
+    description: 'Number of seconds between retrying to find existing tag, only used if "wait-for-tag-seconds" is greater than 0'
+    required: false
+    default: '1'
 
 runs:
   using: 'node16'
